@@ -11,25 +11,22 @@ Redhead Trapeze Artists. Anything your heart desires.
 Once a user creates a group, other users can join those groups and group members can
 create events relevant to the group.
 
-Release 0: Generate Models
+Release 0: Auth
 ------------------
-Let's create our models first. Here are the entities we're going to create
+Use django.contrib.auth to handle creation and authentication of users.
+
+Release 1: Generate Models
+------------------
+Let's create our models. Here are the entities we're going to create
 models and migrations for:
 * User
-  * Examples of attributes include a name, hashed password, email, etc.
   * A user should be able to access his/her groups and only a group's owner can make edits to the group
 * Group
   * Attributes can include: title, owner, description, etc.
 * Event
   * Attributes can include: group, date, title, description, image_url (if they want an image on their event)
 
-Make sure to model the relationships between entities. User
-email and group title should be validated as unique (otherwise things are going
-to get confusing pretty quickly).
-
-Release 1: Auth
-------------------
-Use django.contrib.auth to handle creation and authentication of users.
+Make sure to model the relationships between entities.
 
 Release 2: CRUD Groups
 ------------------
@@ -55,10 +52,10 @@ to the group.
 
 Release 4: Add the Homepage
 ------------------
-Create a view function and url for the root route of the app. There, show me a
-list of ten upcoming events. You can re-use the template you created for
-the group show page, but also show a link to the group itself for each event,
-so that I can go look at the group associated with the event.
+At the root route of the app, show me a list of ten upcoming events. You can 
+re-use the template you created for the group show page, but also show a link to 
+the group itself for each event, so that I can go look at the group associated 
+with the event.
 
 Release 5: Add a Tutorial Page
 ------------------
