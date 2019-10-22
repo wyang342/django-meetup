@@ -13,7 +13,7 @@ create events relevant to the group.
 
 Release 0: Auth
 ------------------
-Use django.contrib.auth to handle creation and authentication of users.
+Use django's default library to handle creation and authentication of users.
 
 Release 1: Generate Models
 ------------------
