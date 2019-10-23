@@ -26,7 +26,8 @@ models and migrations for:
 * Event
   * Attributes can include: group, date, title, description, image_url (if they want an image on their event)
 
-Make sure to model the relationships between entities.
+Make sure to model the relationships between entities. For now it's OK if users can't RSVP for events,
+we can save that for later.
 
 Release 2: CRUD Groups
 ------------------
