@@ -42,6 +42,10 @@ def create_group(request):
 @login_required
 def edit_group(request, group_id):
     group = _get_group(group_id)
+
+    if request.user != group.owner:
+        return redirect('show_group', group_id=group.id)
+
     if request.method == 'POST':
         form = GroupForm(request.POST, instance=group)
         if form.is_valid():
@@ -56,5 +60,9 @@ def edit_group(request, group_id):
 @login_required
 def delete_group(request, group_id):
     group = _get_group(group_id)
+
+    if request.user != group.owner:
+        return redirect('show_group', group_id=group.id)
+
     group.delete()
     return redirect('show_groups')
