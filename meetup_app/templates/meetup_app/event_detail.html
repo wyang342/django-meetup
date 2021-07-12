@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{event.title}}{% endblock title %}
+
+{% block content %}
+    <p>Group: {{event.group}}</p>
+    <h2>{{event.title}}</h2>
+    <p>{{event.date}}</p>
+    {% if event.image_path %}
+        <img src="{{ event.image_path.url }}" alt="event_image">    
+    {% endif %}
+    <p>{{event.desc}}</p>
+
+    <br>
+    <br>
+
+    <a href="{% url 'show_events' group_id=group.id %}">Back To Events</a>
+
+    {% comment %} <a href="{% url 'edit_event' event_id=event.id %}">Edit event</a> {% endcomment %}
+    {% comment %} <a href="{% url 'delete_event' event_id=event.id %}">Delete event</a> {% endcomment %}
+{% endblock content %}

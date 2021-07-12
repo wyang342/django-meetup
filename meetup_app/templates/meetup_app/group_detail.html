@@ -6,7 +6,9 @@
     <h2>{{group.title}}</h2>
     <p>{{group.desc}}</p>
     <p>Owner: {{group.owner}}</p>
+    <a href="{% url 'show_events' group_id=group.id %}">Show Events</a>
 
+    <br>
     <br>
 
     <a href="{% url 'edit_group' group_id=group.id %}">Edit Group</a>

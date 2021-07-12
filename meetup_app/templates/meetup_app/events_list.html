@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Events for {{group.title}}{% endblock title %}
+
+{% block content %}
+    <ul>
+        {% for event in events %}
+            <li><a href="{% url 'show_event' group_id=group.id event_id=event.id %}">{{event.title}}</a></li>
+        {% endfor %}
+    </ul>
+
+    <br>
+
+    {% comment %} <a href="{% url 'create_event' %}">New Event</a> {% endcomment %}
+{% endblock content %}
